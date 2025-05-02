@@ -15,7 +15,7 @@ def check_balance(user_id):
     connection.close()
     
     if balance:
-        return balance[0]  # Return balance
+        return balance[0] 
     else:
         return "No account by that name"
 
@@ -42,7 +42,7 @@ def deposit(user_id, amount):
     return "Deposit success!!"
 
 
-# Function to withdraw funds from an account
+# function to withdraw funds from selected account
 def withdraw(user_id, amount):
     if amount <= 0:
         return "Withdraw amount must be positive"
@@ -68,7 +68,7 @@ def withdraw(user_id, amount):
 
 
 
-# Function to create a new account
+# function to create a new account and add it to mysql table
 def create_account(user_id, name, pin):
     connection = mysql.connector.connect(
         host="localhost",
@@ -85,7 +85,7 @@ def create_account(user_id, name, pin):
     return "Account created"
 
 
-# Function to delete an account
+# function to delete an account from mysql table
 def delete_account(user_id):
     connection = mysql.connector.connect(
         host="localhost",
@@ -101,7 +101,7 @@ def delete_account(user_id):
     return "Account deleted"
 
 
-# Function to modify account details 
+# function to modify account details, and updates it to mysql
 def modify_account(user_id, new_name=None, new_pin=None):
     connection = mysql.connector.connect(
         host="localhost",
@@ -138,7 +138,7 @@ def show_all_accounts():
         print(f"User ID: {row[0]}, Name: {row[1]}, PIN: {row[2]}, Balance: ${row[3]:.2f}")
 
 
-# Main Menu for the app display thing
+# main menu for the app display(When not using ui)
 def main_menu():
     print("\nWelcome to the banking app")
     print("1: Check Balance")
@@ -186,7 +186,7 @@ def main_menu():
     return True
 
 
-# Run program
+# runing program
 if __name__ == "__main__":
     while main_menu():
         pass

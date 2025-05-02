@@ -124,7 +124,7 @@ class BankingAppGUI:
 
         self.pin_label = tk.Label(self.create_account_frame, text="Enter PIN:")
         self.pin_label.pack(pady=5)
-        self.pin_entry = tk.Entry(self.create_account_frame, show="*")
+        self.pin_entry = tk.Entry(self.create_account_frame)
         self.pin_entry.pack(pady=5)
 
         self.create_button = tk.Button(self.create_account_frame, text="Create Account", command=self.create_account)
