@@ -12,7 +12,7 @@ class BankingAppGUI:
         self.main_menu_frame = tk.Frame(root)
         self.main_menu_frame.pack()
 
-        # Option Buttons
+        # mm Buttons
         self.label = tk.Label(self.main_menu_frame, text="Welcome to the Banking App", font=("Helvetica", 14))
         self.label.pack(pady=20)
 
@@ -40,7 +40,7 @@ class BankingAppGUI:
         self.exit_button = tk.Button(self.main_menu_frame, text="Exit", command=self.root.quit)
         self.exit_button.pack(pady=5)
 
-    # Functions to switch to each screen
+    # switch to each screen
 
     def check_balance_screen(self):
         self.main_menu_frame.pack_forget()
@@ -212,13 +212,13 @@ class BankingAppGUI:
         self.back_button.pack(pady=5)
 
     def back_to_main_menu(self):
-        # Clear all frames and go back to the main menu
+        # Clear all and go to the main menu
         for widget in self.root.winfo_children():
             widget.pack_forget()
         self.main_menu_frame.pack()
 
 
-# Run the application
+# Run app
 if __name__ == "__main__":
     root = tk.Tk()
     app = BankingAppGUI(root)
